@@ -6,6 +6,7 @@ The training set of synthetic database consists of a total of 617401 images and 
 Besides, all the real scene text images are also resized to 256 × 256.
 
 For more details, please refer to our [CVM 2021 paper] arXiv: https://arxiv.org/abs/2011.09768
+![](assets/model.png)
 
 ## Requirements
 1. Tensorflow==1.13.1
