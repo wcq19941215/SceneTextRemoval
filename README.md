@@ -1,7 +1,5 @@
 # Scene text removal via cascaded text stroke detection and erasing
 
-## Description
-
 The training set of synthetic database consists of a total of 617401 images and the test set contains 2000 images; all the training and test samples are resized to 256 × 256. The code for generating synthetic dataset and more synthetic text images as described in “Ankush Gupta, Andrea Vedaldi, Andrew Zisserman, Synthetic Data for Text localisation in Natural Images, CVPR 2016", and can be found in (https://github.com/ankush-me/SynthText).
 Besides, all the real scene text images are also resized to 256 × 256.
 
@@ -18,27 +16,23 @@ For more details, please refer to our [CVM 2021 paper] arXiv: https://arxiv.org/
 ## Installation
   1. Clone this respository.
      ```
-     git clone https://github.com/HCIILAB/SceneTextRemoval
+     git clone https://github.com/wcq19941215/SceneTextRemoval.git
      ```
 ## Running
   ### 1. Image Prepare
-     You can refer to our given example to put data.
+     You can modify the path of the trainset, valset dir, and other hyperparameters in `config.yml`.
+     It should be noted that during training, gt, mask, and image are concat into a single image, which will be automatically separated during training.
   ### 2. Training
-  To train our model, you may need to change the path of dataset or the parameters of the network etc. Then run the following code:
+  Once `config.yml` is configured, you only need to run train.py. Then run the following code:
   ```
-  python train.py \
-  --trainset_path=[the path of dataset] \
-  --checkpoint=[path save the model] \
-  --gpu=[use gpu] \
-  --lr=[Learning Rate] \
-  --n_epoch=[Number of iterations]
+  python train.py
   ```
   ### 3. Testing
   To output the generated results of the inputs, you can use the [test.py](https://github.com/HCIILAB/Scene-Text-Removal/blob/master/test.py). Please run the following code:
   ```
   python test.py \
-  --test_image=[the path of test images] \
-  --model=[which model to be test] \
+  --image=[the path of test images] \
+  --mask=[the path of test mask] \
   --vis=[ vis images] \
   --result=[path to save the output images]
   ```
