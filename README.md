@@ -20,28 +20,24 @@ For more details, please refer to our [CVM 2021 paper] arXiv: https://arxiv.org/
      ```
 ## Running
   ### 1. Image Prepare
-     You can modify the path of the trainset, valset dir, and other hyperparameters in `config.yml`.
-     It should be noted that during training, gt, mask, and image are concat into a single image, which will be automatically separated during training.
+  You can modify the path of the trainset, valset dir, and other hyperparameters in `config.yml`.
+  It should be noted that during training, gt, mask, and image are concat into a single image, which will be automatically separated during training.
   ### 2. Training
   Once `config.yml` is configured, you only need to run train.py. Then run the following code:
   ```
   python train.py
   ```
   ### 3. Testing
-  To output the generated results of the inputs, you can use the [test.py](https://github.com/HCIILAB/Scene-Text-Removal/blob/master/test.py). Please run the following code:
+  During the test, `test.py` can only get the output result, not including the evaluation result such as `PSNR`. Please run the following code:
   ```
   python test.py \
   --image=[the path of test images] \
   --mask=[the path of test mask] \
-  --vis=[ vis images] \
-  --result=[path to save the output images]
+  --output=[Where to save output image.] \
+  --checkpoint_dir=[The directory of tensorflow checkpoint]
   ```
-  To evalution the model performace over a dataset, you can find the evaluation metrics in this website [PythonCode.zip](http://pione.dinf.usherbrooke.ca/static/code)
-  ### 4. Pretrained models
-  Please download the ImageNet pretrained models [vgg16](https://pan.baidu.com/s/1Ep83Wc0DHY8rQHaNZM8oPQ) PASSWORD：8tof, and put it under 
-  ```
-  root/.mxmet/models/
-  ```
+  For fair comparison, we use the same evaluation method as [Ensnet](https://github.com/HCIILAB/Scene-Text-Removal), you can find the evaluation metrics in this website [PythonCode.zip](http://pione.dinf.usherbrooke.ca/static/code), You can also use `UTILITY.py` to test PSNR and SSIM
+
 ## Paper
 
 Please consider to cite our paper when you use our database:
