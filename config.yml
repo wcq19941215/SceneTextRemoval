@@ -1,0 +1,22 @@
+SEED: 10            # random seed
+GPU: [3]            # list of gpu ids
+
+CHECKPOINTS: ./model_logs/text_output_0513/  # Save the dir of  CHECKPOINTS files
+LOAD_MODEL: ./model_logs/text_output_0513/   # If there is a checkpoint meta file, it will be read and training will continue
+
+TRAIN_CONCAT_FLIST: /data/dataset/IJCIA_dataset/train/concated.list         # train pic list
+VAL_CONCAT_FLIST: /data/dataset/IJCIA_dataset/test/test_1080/concated.txt   # val pic list
+
+LR: 0.0001                   # learning rate
+BETA1: 0.5                   # adam optimizer beta1
+BETA2: 0.9                   # adam optimizer beta2
+BATCH_SIZE: 4                # input batch size for training
+VAL_BATCH_SIZE: 8            # input batch size for validation
+INPUT_SIZE: 256              # input image size for training 0 for original size
+EPOCH: 200                   # epoch number to train the model
+SAVE_INTERVAL: 500           # how many iterations to wait before saving model (0: never)ckp
+SUMMARY_INTERVAL: 500        # how many iterations to wait before summary model (0: never)tensorboard
+SAMPLE_INTERVAL: 1000        # how many iterations to wait before sampling (0: never)
+SAMPLE_SIZE: 12              # number of images to sample
+EVAL_INTERVAL: 0             # how many iterations to wait before model evaluation (0: never)
+LOG_INTERVAL: 10             # how many iterations to wait before logging training status (0: never)
