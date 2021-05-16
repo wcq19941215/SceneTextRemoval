@@ -62,15 +62,15 @@ def main():
             epoch = 0
 
         # Start input enqueue threads
-        progbar = Progbar(dataset.len_train, width=20, stateful_metrics=['epoch', 'iter', 'gen_loss', 'dis_loss', 'psnr', 'ssim'])
+        progbar = Progbar(dataset.len_train // dataset.batch_size, width=20, stateful_metrics=['epoch', 'iter', 'gen_loss', 'dis_loss', 'psnr', 'ssim'])
         tmp_epoch = epoch
         while epoch < config.EPOCH:
             step += 1
-            epoch = int(step * dataset.batch_size // dataset.len_train)
+            epoch = int(step * dataset.batch_size / dataset.len_train)
             if (tmp_epoch < epoch):
                 tmp_epoch = epoch
                 # print("\n")
-                progbar = Progbar(dataset.len_train, width=20, stateful_metrics=['epoch', 'iter', 'gen_loss', 'dis_loss', 'psnr', 'ssim'])
+                progbar = Progbar(dataset.len_train // dataset.batch_size, width=20, stateful_metrics=['epoch', 'iter', 'gen_loss', 'dis_loss', 'psnr', 'ssim'])
 
             g_loss, _ = sess.run([gen_loss, gen_optim])
             d_loss, _ = sess.run([dis_loss, dis_optim])
@@ -83,7 +83,7 @@ def main():
                 ("psnr", tr_psnr),
                 ("ssim", tr_ssim)
             ]
-            progbar.add(dataset.batch_size, values=logs)
+            progbar.add(1, values=logs)
 
             if step % config.SUMMARY_INTERVAL == 0:
                 # Run validation
