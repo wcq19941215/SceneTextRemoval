@@ -38,10 +38,8 @@ For more details, please refer to our [CVM 2021 paper] arXiv: https://arxiv.org/
   ```
   For fair comparison, we use the same evaluation method as [Ensnet](https://github.com/HCIILAB/Scene-Text-Removal), you can find the evaluation metrics in this website [PythonCode.zip](http://pione.dinf.usherbrooke.ca/static/code), You can also use `UTILITY.py` to test PSNR and SSIM
   ### 4. Pretrained models
-  Please download the our pretrained models [TextRomoval](https://pan.baidu.com/s/1Bj1YM5RqNqZ_PRkvetmy9Q) PASSWORD：1234. 
-  ```
-  
-  ```
+  Please download the our pretrained models [TextRomoval](https://pan.baidu.com/s/1Bj1YM5RqNqZ_PRkvetmy9Q) PASSWORD: ****. 
+
 
 ## Paper
 
