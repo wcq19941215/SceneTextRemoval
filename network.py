@@ -1,4 +1,5 @@
 import tensorflow as tf
+from tensorflow.contrib.framework.python.ops import add_arg_scope
 # import tensorflow.contrib as tf_contrib
 # from tensorflow.contrib.framework.python.ops import add_arg_scope
 # Xavier : tf_contrib.layers.xavier_initializer()
@@ -35,9 +36,9 @@ def images_summary(images, name, max_outs, color_format='BGR'):
         else:
             raise NotImplementedError("color format is not supported.")
         tf.summary.image(name, img, max_outputs=max_outs)
-
+@add_arg_scope
 def gen_conv(x, cnum, ksize, stride=1, rate=1, name='conv',
-             padding='SAME', activation=tf.nn.leaky_relu):
+             padding='SAME', activation=tf.nn.leaky_relu ,training = True):
     """Define conv for generator.
 
     Args:
@@ -64,8 +65,8 @@ def gen_conv(x, cnum, ksize, stride=1, rate=1, name='conv',
         x, cnum, ksize, stride, dilation_rate=rate,
         activation=activation, padding=padding, name=name)
     return x
-
-def gen_deconv(x, cnum, name='upsample', padding='SAME'):
+@add_arg_scope
+def gen_deconv(x, cnum, name='upsample', padding='SAME',training = True):
     """Define deconv for generator.
     The deconv is defined to be a x2 resize_nearest_neighbor operation with
     additional gen_conv operation.
