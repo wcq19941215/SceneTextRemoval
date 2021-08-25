@@ -78,8 +78,8 @@ if __name__ == "__main__":
     inputs = tf.concat([images_masked, masks], axis=3)
 
     # process outputs
-    stroke_mask1, output1, stroke_mask2, output2 = model.inpaint_generator(
-            images, masks,masks, reuse=False, training=False,name='inpaint_generator',
+    stroke_mask1, output1, stroke_mask2, output2 = model.generator(
+            images, masks, reuse=False, training=False,name='textremoval_generator',
             padding='SAME')
     output = output2
 
