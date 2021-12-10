@@ -46,9 +46,15 @@ For more details, please refer to our [CVM 2021 paper] arXiv: https://arxiv.org/
 Please consider to cite our paper when you use our database:
 ```
 @article{Bian2021Scence,
-  title     = {Scene text removal via cascaded text stroke detection and erasing},
-  author    = {Xuewei Bian, Chaoqun Wang, Weize Quan, Juntao Ye, Xiaopeng Zhang, Dong-Ming Yan}
-  joural    = {CVM}
-  year      = {2021}
+  title = {Scene text removal via cascaded text stroke detection and erasing},
+  author = {Xuewei Bian, Chaoqun Wang, Weize Quan, Juntao Ye, Xiaopeng Zhang, Dong-Ming Yan}
+  publisher = {Computational Visual Media},
+  year = {2022},
+  journal = {Computational Visual Media},
+  volume = {8},
+  number = {2},
+  numpages = {15},
+  keywords = {;scene text removal;text stroke detection;generative adversarial networks;cascaded network design;real-world dataset},
+  doi = {10.1007/s41095-021-0242-8}
 }
 ```
