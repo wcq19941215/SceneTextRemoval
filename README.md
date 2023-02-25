@@ -40,6 +40,8 @@ For more details, please refer to our [CVM 2021 paper] arXiv: https://arxiv.org/
   ### 4. Pretrained models
   Please download the our pretrained models [TextRomoval](https://pan.baidu.com/s/1Bj1YM5RqNqZ_PRkvetmy9Q) PASSWORD:1234. 
 
+### 5. Dataset
+The dataset can be obtained by sending a request email to us. Specifically, the researchers should download and fill up this Agreement Form and send it back to Weize Quan (weize.quan AT nlpr.ia.ac.cn; Email title: Scene Text Removal Dataset Request). We will then send you the download instructions at our discretion.
 
 ## Paper
 
